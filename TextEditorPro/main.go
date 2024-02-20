@@ -1,3 +1,5 @@
+// # main.go
+
 package main
 
 import "fmt"
@@ -14,10 +16,6 @@ func main() {
 
 	// defer garantit que la fonction endProgram sera appelée
 	defer endProgram()
-
-
-	
-
 	for {
 		c := readChar()
 		if c == 'q' {
