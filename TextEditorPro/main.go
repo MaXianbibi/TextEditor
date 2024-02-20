@@ -4,11 +4,19 @@ import "fmt"
 
 // import "fmt"
 
-func main() {
-	
-	origalState := terminalSetup()
-	defer disableRawMode(origalState)
+func endProgram() {
+	disableRawMode(Get_raw_state().originalState)
 
+}
+
+func main() {
+	terminalSetup()
+
+	// defer garantit que la fonction endProgram sera appelée
+	defer endProgram()
+
+
+	
 
 	for {
 		c := readChar()
